@@ -3,7 +3,7 @@
 
 
 body {
-    background: black;
+    background: white;
 }
 
 .navbar-fixed {
@@ -12,8 +12,7 @@ body {
 
 .login-button {
     width: 25rem;
-    margin-top: 6%;
-    margin-left: 10%;
+    margin-top: 8.5%;
     font-size: large;
     font-weight: bold;
 }
@@ -23,8 +22,8 @@ body {
     font-size: 800%;
     color: #7c4dff;
     display: block;
-    margin-top: 15%;
-    margin-left: 48%;
+    margin-top: 19%;
+    margin-left: 60%;
 }
 
 .logo-nav {
