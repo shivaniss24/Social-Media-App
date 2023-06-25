@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { makeServer } from "./server";
 import { Auth0Provider } from '@auth0/auth0-react';
 import { BrowserRouter as Router } from "react-router-dom";
+import { AppProvider } from './context/AppContext';
 
 // Call make Server
 makeServer();
@@ -17,15 +18,17 @@ const clientId = process.env.REACT_APP_CLIENT_ID;
 
 root.render(
   <React.StrictMode>
-    <Auth0Provider
-      domain={domain}
-      clientId={clientId}
-      redirectUri={window.location.origin}
-    >
-      <Router>
-        <App />
-      </Router>
-    </Auth0Provider>
+    <AppProvider>
+      <Auth0Provider
+        domain={domain}
+        clientId={clientId}
+        redirectUri={window.location.origin}
+      >
+        <Router>
+          <App />
+        </Router>
+      </Auth0Provider>
+    </AppProvider>
   </React.StrictMode>
 );
 

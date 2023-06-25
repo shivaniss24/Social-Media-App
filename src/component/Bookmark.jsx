@@ -1,17 +1,17 @@
 import React from 'react'
-import Cards from './Cards'
 import { useAppContext } from '../context/AppContext';
+import Cards from './Cards';
 
-const Feed = () => {
+const Bookmark = () => {
     const { isLoading, posts } = useAppContext();
 
-    const feedPosts = posts.filter((post) => post.isFollowed);
+    const bookmarkPosts = posts.filter((post) => post.isBookmarked);
 
     return (
         <div className='col s7 feed'>
-            <Cards posts={feedPosts} />
+            <Cards posts={bookmarkPosts} />
         </div>
     )
 }
 
-export default Feed
+export default Bookmark

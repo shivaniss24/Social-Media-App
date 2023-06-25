@@ -76,6 +76,8 @@ body {
     margin-top: 5%;
     background-color: white;
     position: fixed;
+    overflow-y: scroll;
+    padding-right: 1.75%;
 }
 
 .user-photo {
@@ -125,4 +127,14 @@ body {
 .card-delete-icon {
     font-size: x-large;
     margin-top: 2.5%;
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 50%;
+    margin-top: 30%;
+}
+
+.profile-left {
+    text-align: left;
 }
