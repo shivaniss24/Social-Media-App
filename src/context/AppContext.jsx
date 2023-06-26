@@ -47,13 +47,21 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "UPDATE_POST_DATA", payload: { id, isBookmarked } });
   }
 
+  const handleIsLikedFlag = (id, isLiked, likeCount) => {
+    dispatch({ type: "UPDATE_POST_DATA_LIKE", payload: { id, isLiked, likeCount } });
+  }
+
+  const deletePost = (id) => {
+    dispatch({ type: "DELETE_POST", payload: { id } });
+  }
+
   useEffect(() => {
     getPosts(POSTS_API);
     getUsers(USERS_API);
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state, updateisFollowedFlag, handleIsbookmarkedFlag }}>
+    <AppContext.Provider value={{ ...state, updateisFollowedFlag, handleIsbookmarkedFlag, handleIsLikedFlag, deletePost }}>
       {children}
     </AppContext.Provider>
   );

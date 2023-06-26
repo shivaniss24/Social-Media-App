@@ -15,11 +15,11 @@ const Profile = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='col s4'>
-                        <img className='profile-pic' src={user.picture} />
+                        <img className='profile-pic' src={user?.picture} />
                     </div>
                     <div className='col s8'>
-                        <h4 className='profile-left'>{user.name}</h4>
-                        <p className='profile-left'>{user.email}</p>
+                        <h4 className='profile-left'>{user?.name}</h4>
+                        <p className='profile-left'>{user?.email}</p>
                         <p className='profile-left grey-text'>Followers 1k &nbsp; &nbsp; &nbsp; Followed 5</p>
                     </div>
                 </div>

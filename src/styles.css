@@ -138,3 +138,12 @@ body {
 .profile-left {
     text-align: left;
 }
+
+.create-post-icon {
+    vertical-align: middle;
+    font-size: 150%;
+}
+
+.create-post {
+    margin-top: 4%;
+}

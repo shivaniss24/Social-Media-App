@@ -1,8 +1,20 @@
-import React from 'react'
-import { FaBookmark, FaHome, FaSearch, FaUser } from "react-icons/fa";
+import React, { useState } from 'react'
+import { FaBookmark, FaHome, FaPlus, FaSearch, FaUser } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
+import CreatePostModal from './CreatePostModal';
 
 const SideNav = () => {
+
+    const [createPostVisibility, setCreatePostVisibility] = useState(false);
+
+    const showModal = () => {
+        setCreatePostVisibility(true);
+    }
+
+    const closeModal = () => {
+        setCreatePostVisibility(false);
+    }
+
     return (
         <div className='col s2'>
             < ul className='sidenav sidenav-fixed sidenav-align' >
@@ -38,7 +50,19 @@ const SideNav = () => {
                         <b className='right'>Bookmark</b></a>
                     </li>
                 </NavLink>
+
+                <li className='text-black'>
+                    <a onClick={showModal} className='btn-floating btn-large waves-effect waves-light deep-purple accent-2 right'>
+                        <FaPlus className="create-post-icon" />
+                    </a>
+                    <b className='right create-post'>Create Post</b>
+                </li>
             </ul >
+
+            <div>
+                {createPostVisibility && <CreatePostModal closeModal={closeModal} />}
+            </div>
+
         </div >
     )
 }

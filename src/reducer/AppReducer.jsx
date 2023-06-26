@@ -75,6 +75,36 @@ const AppReducer = (state, action) => {
                 posts: bookmarkedPosts
             };
 
+        case "UPDATE_POST_DATA_LIKE":
+            const likePostId = action.payload.id;
+            const isLiked = action.payload.isLiked;
+            const likeCount = action.payload.likeCount;
+
+            const likePosts = state.posts.map((post) => {
+                if (post.id === likePostId) {
+                    post.isLiked = isLiked;
+                    post.likes.likeCount = likeCount;
+                }
+                return post;
+            });
+
+            return {
+                ...state,
+                isLoading: false,
+                posts: likePosts
+            };
+
+        case "DELETE_POST":
+            const deletePostId = action.payload.id;
+
+            const postsAfterDelete = state.posts.filter((post) => post.id !== deletePostId);
+
+            return {
+                ...state,
+                isLoading: false,
+                posts: postsAfterDelete
+            };
+
 
         default:
             return state;

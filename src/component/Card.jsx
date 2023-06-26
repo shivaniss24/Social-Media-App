@@ -4,7 +4,7 @@ import { BsBookmark, BsBookmarkFill } from "react-icons/bs"
 import { useAppContext } from '../context/AppContext';
 
 const Card = ({ post, isDeleteVisible }) => {
-    const { handleIsbookmarkedFlag } = useAppContext();
+    const { handleIsbookmarkedFlag, handleIsLikedFlag, deletePost } = useAppContext();
 
     const { userImage, name, caption, image, likes, isBookmarked, isLiked } = post;
 
@@ -16,13 +16,22 @@ const Card = ({ post, isDeleteVisible }) => {
         handleIsbookmarkedFlag(post.id, !post.isBookmarked);
     }
 
+    const handleLike = (post) => {
+        const likeCount = post.isLiked ? post.likes.likeCount - 1 : post.likes.likeCount + 1
+        handleIsLikedFlag(post.id, !post.isLiked, likeCount);
+    }
+
+    const handleDelete = (post) => {
+        deletePost(post.id);
+    }
+
     return (
         <div className="card">
             <ul className='collection card-user'>
                 <li className="collection-item">
                     <img src={userImage} alt="" className="card-user-photo left" />
                     <span className='card-user-name left'>{name}</span>
-                    <a className='icon black-text'>
+                    <a onClick={(e) => handleDelete(post)} className='icon black-text'>
                         {isDeleteVisible && <AiOutlineDelete className="icons card-delete-icon right" />}
                     </a>
                 </li>
@@ -36,7 +45,7 @@ const Card = ({ post, isDeleteVisible }) => {
                 </p>
             </div>
             <div className="card-action">
-                <a className='icon black-text'>
+                <a onClick={(e) => handleLike(post)} className='icon black-text'>
                     {like}
                 </a>
                 <a className='icon black-text left'>

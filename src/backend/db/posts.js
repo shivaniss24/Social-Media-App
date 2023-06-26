@@ -23,6 +23,7 @@ export const posts = [
     isBookmarked: false,
     isFollowed: true,
     isTrending: false,
+    isLiked: false,
     latestCount: 0
   },
   {
@@ -68,7 +69,7 @@ export const posts = [
     caption: "Chai 🤩",
     image: "https://assets.cntraveller.in/photos/60ba136f1fa22668f0259d5d/16:9/pass/yewalechai.jpg",
     likes: {
-      likeCount: 0,
+      likeCount: 9800,
       likedBy: []
     },
     name: "Narendra Modi",
@@ -87,7 +88,7 @@ export const posts = [
     caption: "Office 🤩",
     image: "https://c4.wallpaperflare.com/wallpaper/965/334/486/google-office-building-wallpaper-preview.jpg",
     likes: {
-      likeCount: 0,
+      likeCount: 1,
       likedBy: []
     },
     name: "Sundar Pichai",
@@ -106,7 +107,7 @@ export const posts = [
     caption: "coding 🤩",
     image: "https://i.rtings.com/assets/pages/ujDprOVq/best-monitors-for-programming-and-coding-medium.jpg",
     likes: {
-      likeCount: 0,
+      likeCount: 1100,
       likedBy: []
     },
     name: "Shivani Soni",
@@ -125,7 +126,7 @@ export const posts = [
     caption: "music",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRS93pZW5gLQD1tzAa8-3p4GWKyPvNX-6j8w&usqp=CAU",
     likes: {
-      likeCount: 0,
+      likeCount: 988,
       likedBy: []
     },
     name: "Shivani Soni",
