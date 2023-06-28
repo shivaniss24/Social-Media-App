@@ -85,7 +85,19 @@ export function makeServer({ environment = "development" } = {}) {
         unfollowUserHandler.bind(this)
       );
 
-      this.passthrough('https://dev-zzutzt6k3e1ozxuy.us.auth0.com/**');
+      this.passthrough(request => {
+        return !request.url.includes('api') || request.url.includes('https');
+      });
+
+      // this.passthrough('https://dev-zzutzt6k3e1ozxuy.us.auth0.com/**');
+      // this.passthrough('https://www.filestackapi.com/**');
+      // this.passthrough('https://upload.filestackapi.com/**');
+      // this.passthrough('https://cdn.filestackcontent.com/**');
+      // this.passthrough('https://process.filestackapi.com/**');
+      // this.passthrough('https://cloud.filestackapi.com/**');
+      // this.passthrough('https://static.filestackapi.com/**');
+      // this.passthrough('https://upload-ap-northeast-1.filestackapi.com/**');
+      // this.passthrough('https://filestack-uploads-persist-production.s3.amazonaws.com/**');
 
     },
   });

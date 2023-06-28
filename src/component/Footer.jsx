@@ -6,8 +6,8 @@ const Footer = () => {
         <footer className='page-footer deep-purple accent-2 footer-bottom'>
             <div className="row">
                 <span className='follow-us'>
-                    © 2023 Connect |
-                    Follow
+                    © 2023 Connect | made with ❤️ by - Shivani Soni |
+                    Follow me on
                     <a className='icon'
                         href="https://twitter.com/Shivanisoni24"
                         target="_blank">
@@ -19,7 +19,7 @@ const Footer = () => {
                         <FaInstagram className="icons" />
                     </a>
                     <a className='icon'
-                        href="https://discord.com/channels/@me/1003199813707374663"
+                        href="https://discord.com/channels/@shivanisoni24"
                         target="_blank">
                         <FaDiscord className="icons" />
                     </a>

@@ -7,7 +7,7 @@ const Profile = () => {
     const { user } = useAuth0();
     const { isLoading, posts } = useAppContext();
 
-    const profilePosts = posts.filter((post) => user.email === post.email);
+    const profilePosts = posts.filter((post) => user?.email === post.email);
 
     return (
         <div className='col s7 feed'>

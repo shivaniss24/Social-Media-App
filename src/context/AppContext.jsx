@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import appReducer from "../reducer/AppReducer";
+import { formatDate } from "../backend/utils/authUtils";
 
 const AppContext = createContext();
 
@@ -55,13 +56,37 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "DELETE_POST", payload: { id } });
   }
 
+  const createPost = (user, caption, imageUrl, postId) => {
+    console.log();
+    const post = {
+      id: postId,
+      caption: caption,
+      image: imageUrl,
+      likes: {
+        likeCount: 0,
+        likedBy: []
+      },
+      name: user.name,
+      createdAt: formatDate(),
+      updatedAt: formatDate(),
+      userImage: user.picture,
+      email: user.email,
+      isBookmarked: false,
+      isFollowed: true,
+      isTrending: false,
+      isLiked: false,
+      latestCount: 0
+    }
+    dispatch({ type: "CREATE_POST", payload: { post } });
+  }
+
   useEffect(() => {
     getPosts(POSTS_API);
     getUsers(USERS_API);
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state, updateisFollowedFlag, handleIsbookmarkedFlag, handleIsLikedFlag, deletePost }}>
+    <AppContext.Provider value={{ ...state, updateisFollowedFlag, handleIsbookmarkedFlag, handleIsLikedFlag, deletePost, createPost }}>
       {children}
     </AppContext.Provider>
   );

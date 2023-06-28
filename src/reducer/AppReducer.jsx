@@ -105,6 +105,23 @@ const AppReducer = (state, action) => {
                 posts: postsAfterDelete
             };
 
+        case "CREATE_POST":
+            const createPost = action.payload.post;
+
+            const postsAfterCreate = state.posts;
+
+            if (state.posts.filter(post => post.id === createPost.id).length === 0) {
+                createPost.latestCount = state.latestCount + 1;
+                postsAfterCreate.push(createPost);
+            }
+
+            return {
+                ...state,
+                isLoading: false,
+                posts: postsAfterCreate,
+                latestCount: state.latestCount + 1
+            };
+
 
         default:
             return state;

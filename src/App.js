@@ -9,7 +9,8 @@ import UserBar from './component/UserBar';
 import Feed from './component/Feed';
 import Profile from './component/Profile';
 import Bookmark from './component/Bookmark';
-import Explore from './component/Explore'
+import Explore from './component/Explore';
+import Loader from './component/Loader';
 
 function App() {
   const { loginWithRedirect, isAuthenticated, logout, user, isLoading } = useAuth0();
@@ -33,6 +34,8 @@ function App() {
         </div>
       </div>
       <Footer />
+
+      {isLoading && <Loader />}
     </div>
   );
 }
