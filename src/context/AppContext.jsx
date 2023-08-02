@@ -56,6 +56,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "DELETE_POST", payload: { id } });
   }
 
+  const editPost = (id, caption) => {
+    dispatch({ type: "EDIT_POST", payload: { id, caption } });
+  }
+
   const createPost = (user, caption, imageUrl, postId) => {
     console.log();
     const post = {
@@ -86,7 +90,7 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state, updateisFollowedFlag, handleIsbookmarkedFlag, handleIsLikedFlag, deletePost, createPost }}>
+    <AppContext.Provider value={{ ...state, updateisFollowedFlag, handleIsbookmarkedFlag, handleIsLikedFlag, deletePost, createPost, editPost }}>
       {children}
     </AppContext.Provider>
   );

@@ -44,7 +44,12 @@ body {
     position: fixed;
     bottom: 0%;
     width: 100%;
-    vertical-align: bottom;
+    z-index: 1;
+    height: 7%;
+}
+
+.text-margin {
+    margin-top: 0.8%;
 }
 
 .follow-us {
@@ -64,7 +69,7 @@ body {
 
 .sidenav-align {
     margin-top: 5%;
-    max-height: 78.6vh;
+    z-index: 1;
 }
 
 .nav-icon {
@@ -146,4 +151,49 @@ body {
 
 .create-post {
     margin-top: 4%;
+}
+
+.fixed-div {
+    position: fixed;
+    z-index: 1;
+    width: 5%;
+    margin-left: 39.5%;
+}
+
+.sort-icon {
+    font-size: x-large;
+    padding: 3%;
+}
+
+/* label color */
+.input-field label {
+    color: #7c4dff !important;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus+label {
+    color: #7c4dff !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #7c4dff !important;
+    box-shadow: 0 1px 0 0 #7c4dff !important;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #7c4dff !important;
+    box-shadow: 0 1px 0 0 #7c4dff !important;
+}
+
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #7c4dff !important;
+    box-shadow: 0 1px 0 0 #7c4dff !important;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #7c4dff !important;
 }

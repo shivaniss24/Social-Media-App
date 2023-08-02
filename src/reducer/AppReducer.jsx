@@ -122,6 +122,22 @@ const AppReducer = (state, action) => {
                 latestCount: state.latestCount + 1
             };
 
+        case "EDIT_POST":
+            const editPostId = action.payload.id;
+            const caption = action.payload.caption;
+
+            const postsAfterEdit = state.posts.map(post => {
+                if (post.id === editPostId) {
+                    post.caption = caption;
+                }
+                return post;
+            });
+
+            return {
+                ...state,
+                isLoading: false,
+                posts: postsAfterEdit
+            };
 
         default:
             return state;

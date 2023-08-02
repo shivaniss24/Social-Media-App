@@ -31,7 +31,7 @@ const UserBar = () => {
                 <div className='container'>
                     <div className="search">
                         <div className="search-wrapper">
-                            <input onChange={searchUser} key='search' placeholder="Search" value={input} />
+                            <input onChange={searchUser} key='search' placeholder="Search User" value={input} />
                         </div>
                     </div>
                 </div>

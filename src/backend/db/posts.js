@@ -41,7 +41,7 @@ export const posts = [
     email: "abhi.soni@gmail.com",
     isBookmarked: false,
     isFollowed: false,
-    isTrending: false,
+    isTrending: true,
     isLiked: true,
     latestCount: 0
   },
@@ -60,7 +60,7 @@ export const posts = [
     email: "taylor@gmail.com",
     isBookmarked: false,
     isFollowed: false,
-    isTrending: false,
+    isTrending: true,
     isLiked: false,
     latestCount: 0
   },
@@ -79,7 +79,7 @@ export const posts = [
     email: "narendra.modi@gmail.com",
     isBookmarked: false,
     isFollowed: true,
-    isTrending: false,
+    isTrending: true,
     isLiked: true,
     latestCount: 0
   },

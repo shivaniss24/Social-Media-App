@@ -3,8 +3,8 @@ import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className='page-footer deep-purple accent-2 footer-bottom'>
-            <div className="row">
+        <footer className='white-text deep-purple accent-2 footer-bottom'>
+            <div className='text-margin'>
                 <span className='follow-us'>
                     © 2023 Connect | made with ❤️ by - Shivani Soni |
                     Follow me on
